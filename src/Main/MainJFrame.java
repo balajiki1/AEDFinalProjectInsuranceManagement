@@ -6,10 +6,7 @@ package Main;
 
 import java.awt.CardLayout;
 
-/**
- *
- * @author gomathyselvamuthiah
- */
+
 public class MainJFrame extends javax.swing.JFrame {
 
     /**
