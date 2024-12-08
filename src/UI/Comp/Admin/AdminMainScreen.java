@@ -11,8 +11,6 @@ import Model.Account.AccountCredentials;
 import Model.Account.AccountCredentialsDirectory;
 import Model.DatabaseConnection.DatabaseConnection;
 import java.awt.CardLayout;
-import javax.mail.Authenticator; // Correct
-import javax.mail.PasswordAuthentication;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -28,13 +26,15 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
+
+// Correct
 import javax.mail.*;
 import javax.mail.internet.*;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author abhishek prakash
+ * @author kishorebalaji
  */
 public class AdminMainScreen extends javax.swing.JPanel {
 
