@@ -9,21 +9,21 @@ package Model.Employee;
  *
  * @author kishorebalaji
  */
-public class Admin extends Employee {
-    public Admin(String firstName, String lastName, String email, String ssn) {
+public class Underwriter extends Employee {
+    public Underwriter(String firstName, String lastName, String email, String ssn) {
         super(firstName, lastName, email, ssn);
     }
 
     @Override
     public void viewProfile() {
-        System.out.println("Viewing admin profile: " + firstName + " " + lastName +
+        System.out.println("Viewing underwriter profile: " + firstName + " " + lastName +
                 " (Account ID: " + getAccountId() + ", Employee ID: " + employeeId + ")");
-        // Additional admin-specific view logic
+        // Additional underwriter-specific view logic
     }
 
     @Override
     public String getRole() {
-        return "Admin";
+        return "Underwriter";
     }
 }
 
