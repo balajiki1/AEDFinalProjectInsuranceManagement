@@ -9,15 +9,17 @@ import Model.Account.AccountCredentials;
 import Model.Account.AccountCredentialsDirectory;
 import Model.Customer.Customer;
 import Model.DatabaseConnection.DatabaseConnection;
+import Model.Policy.PolicyDirectory;
+import UI.ClaimProcessor.Claim_Processor_Dashboard;
 import UI.Comp.Admin.AdminMainScreen;
 import UI.Comp.Agent.AgentMainScreen;
 import UI.Customer.CustomerLogin;
 import UI.Customer.CustomerMainScreen;
+import UI.IT_Support.IT_Support_Dashboard;
 import UI.Thirdparty.PAYMENT.VerifySyncBillingLogin;
 import UI.Thirdparty.PAYMENT.VerifySyncBillingMainPage;
 import UI.Thirdparty.POLK.POLKChoiceScreen;
 import UI.Thirdparty.POLK.POLKLoginScreen;
-import UI.Thirdparty.VIN.VINAuditMainScreen;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -25,11 +27,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import UI.IT_Support.IT_Support_Tech_Isuue_Homepage;
+import UI.Policy.Policy_Admin_Dashboard;
+import UI.Sales.Sales_DashBoard;
 
 /**
  *
- * @author gomathyselvamuthiah
+ * @author kishorebalaji
  */
 public class LoginScreen extends javax.swing.JPanel {
 
@@ -63,17 +67,16 @@ public class LoginScreen extends javax.swing.JPanel {
         txtPassword = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        btnSalesPesronLogin = new javax.swing.JButton();
         btnPOLK = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btnverifybilling1 = new javax.swing.JButton();
         btnCustomersLogin = new javax.swing.JButton();
+        btnTechnicalIssue = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/LoginScreen.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Insurance_Management_Services.jpg"))); // NOI18N
 
         jLabel.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         jLabel.setForeground(new java.awt.Color(51, 51, 51));
@@ -101,15 +104,6 @@ public class LoginScreen extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("      Third-Party Logins");
 
-        btnSalesPesronLogin.setForeground(new java.awt.Color(51, 51, 51));
-        btnSalesPesronLogin.setText("Sales Person Login");
-        btnSalesPesronLogin.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, java.awt.Color.lightGray));
-        btnSalesPesronLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalesPesronLoginActionPerformed(evt);
-            }
-        });
-
         btnPOLK.setForeground(new java.awt.Color(51, 51, 51));
         btnPOLK.setText("POLK");
         btnPOLK.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, java.awt.Color.lightGray));
@@ -118,10 +112,6 @@ public class LoginScreen extends javax.swing.JPanel {
                 btnPOLKActionPerformed(evt);
             }
         });
-
-        jLabel4.setFont(new java.awt.Font("Arial Hebrew", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel4.setText("Sales Person Login ");
 
         jLabel5.setFont(new java.awt.Font("Arial Hebrew", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
@@ -145,13 +135,20 @@ public class LoginScreen extends javax.swing.JPanel {
             }
         });
 
+        btnTechnicalIssue.setText("Technical Issue");
+        btnTechnicalIssue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTechnicalIssueActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(142, 142, 142)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -162,8 +159,12 @@ public class LoginScreen extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addComponent(jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 120, Short.MAX_VALUE)))
+                        .addGap(0, 126, Short.MAX_VALUE)))
                 .addContainerGap(132, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnTechnicalIssue)
+                .addGap(54, 54, 54))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -171,24 +172,25 @@ public class LoginScreen extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnPOLK, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnCustomersLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(154, 154, 154)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(btnverifybilling1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnSalesPesronLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addGap(375, 375, 375)
+                                .addComponent(btnverifybilling1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(108, 108, 108))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(331, 331, 331)
+                        .addGap(550, 550, 550)
+                        .addComponent(btnCustomersLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(522, 522, 522)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(128, 128, 128)
+                .addGap(47, 47, 47)
+                .addComponent(btnTechnicalIssue)
+                .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -202,18 +204,14 @@ public class LoginScreen extends javax.swing.JPanel {
                         .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalesPesronLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCustomersLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addComponent(btnCustomersLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPOLK, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnverifybilling1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -233,7 +231,7 @@ public class LoginScreen extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-       String userID = txtUserName.getText();
+        String userID = txtUserName.getText();
     String password = txtPassword.getText();
 
     try (Connection conn = DatabaseConnection.getConnection()) {
@@ -263,23 +261,30 @@ public class LoginScreen extends javax.swing.JPanel {
                                 layout.next(workPanel);
                                 break;
                             case "agent":
-                                if (account != null) { // Ensure account is not null
-                                    AgentMainScreen agentMainScreen = new AgentMainScreen(BIM, workPanel, account);
+                                    AgentMainScreen agentMainScreen = new AgentMainScreen(BIM, workPanel);
                                     workPanel.add("AgentMainScreen", agentMainScreen);
                                     layout.next(workPanel);
-                                } else {
-                                    JOptionPane.showMessageDialog(this, "Agent account not found.");
-                                }
                                 break;
-                            case "customer":
-                                if (account instanceof Customer) { // Ensure account is a Customer object
-                                    Customer cust = (Customer) account;
-                                    CustomerMainScreen customerMainScreen = new CustomerMainScreen(BIM, workPanel, cust);
-                                    workPanel.add("CustomerMainScreen", customerMainScreen);
-                                    layout.next(workPanel);
-                                } else {
-                                    JOptionPane.showMessageDialog(this, "Invalid account type for customer.");
-                                }
+                            case "itsupport":
+                                IT_Support_Dashboard itSupportDashboard = new IT_Support_Dashboard(workPanel);
+                                workPanel.add("ITSupportDashboard", itSupportDashboard);
+                                layout.next(workPanel);
+                                break;
+                            case "policyadmin": 
+                                PolicyDirectory policyDirectory = new PolicyDirectory();
+                                Policy_Admin_Dashboard policyAdminDashboard = new Policy_Admin_Dashboard(workPanel, policyDirectory);
+                                workPanel.add("PolicyAdminDashboard", policyAdminDashboard);
+                                layout.next(workPanel);
+                                break;
+                            case "salesperson": 
+                                Sales_DashBoard salesDashboard = new Sales_DashBoard(workPanel);
+                                workPanel.add("SalesDashboard", salesDashboard);
+                                layout.next(workPanel);
+                                break;
+                            case "claimprocessor": // Add Claim Processor role
+                                Claim_Processor_Dashboard claimProcessorDashboard = new Claim_Processor_Dashboard(workPanel);
+                                workPanel.add("ClaimProcessorDashboard", claimProcessorDashboard);
+                                layout.next(workPanel);
                                 break;
                             default:
                                 JOptionPane.showMessageDialog(this, "Unknown role.");
@@ -301,62 +306,62 @@ public class LoginScreen extends javax.swing.JPanel {
     }
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void btnSalesPesronLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalesPesronLoginActionPerformed
-        // TODO add your handling code here:
-        // TODO add your handling code here:
- 
-    }//GEN-LAST:event_btnSalesPesronLoginActionPerformed
-
     private void btnPOLKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPOLKActionPerformed
-  // Instantiate the POLKLoginScreen panel and pass BIM and workPanel
-    POLKLoginScreen polkLoginScreen = new POLKLoginScreen(BIM, workPanel);
-    
-    // Add the POLKLoginScreen panel back to the workPanel
-    workPanel.add("POLKLoginScreen", polkLoginScreen);
-    
-    // Switch to the POLKLoginScreen panel
-    CardLayout layout = (CardLayout) workPanel.getLayout();
-    layout.show(workPanel, "POLKLoginScreen");
-        
+        // Instantiate the POLKLoginScreen panel and pass BIM and workPanel
+        POLKLoginScreen polkLoginScreen = new POLKLoginScreen(workPanel);
+
+        // Add the POLKLoginScreen panel back to the workPanel
+        workPanel.add("POLKLoginScreen", polkLoginScreen);
+
+        // Switch to the POLKLoginScreen panel
+        CardLayout layout = (CardLayout) workPanel.getLayout();
+        layout.show(workPanel, "POLKLoginScreen");
+
     }//GEN-LAST:event_btnPOLKActionPerformed
 
     private void btnverifybilling1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnverifybilling1ActionPerformed
         // TODO add your handling code here:
-           VerifySyncBillingLogin verifySyncBillingLogin = new VerifySyncBillingLogin(BIM, workPanel);
-    workPanel.add("VerifySyncBillingLogin", verifySyncBillingLogin);
-    CardLayout layout = (CardLayout) workPanel.getLayout();
-    layout.next(workPanel);
+        VerifySyncBillingLogin verifySyncBillingLogin = new VerifySyncBillingLogin(BIM, workPanel);
+        workPanel.add("VerifySyncBillingLogin", verifySyncBillingLogin);
+        CardLayout layout = (CardLayout) workPanel.getLayout();
+        layout.next(workPanel);
     }//GEN-LAST:event_btnverifybilling1ActionPerformed
 
     private void btnCustomersLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomersLoginActionPerformed
         // TODO add your handling code here:
 
-      
-
-    // Find the account by userID
-   
-
-    
+        // Find the account by userID
         // Create and navigate to the CustomerMainScreen
-        CustomerLogin customerLogin = new CustomerLogin();
+        CustomerLogin customerLogin = new CustomerLogin(workPanel);
         workPanel.add("CustomerLogin", customerLogin);
         CardLayout layout = (CardLayout) workPanel.getLayout();
         layout.next(workPanel);
-    
+
     }//GEN-LAST:event_btnCustomersLoginActionPerformed
- private javax.swing.JButton btnCustomerLogin;
+
+    private void btnTechnicalIssueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTechnicalIssueActionPerformed
+        // TODO add your handling code here:
+        IT_Support_Tech_Isuue_Homepage itSupport = new IT_Support_Tech_Isuue_Homepage(workPanel);
+
+        // Add the new panel to the workPanel
+        workPanel.add("ItSupport", itSupport);
+
+        // Switch to the new panel
+        CardLayout layout = (CardLayout) workPanel.getLayout();
+        layout.next(workPanel);
+    }//GEN-LAST:event_btnTechnicalIssueActionPerformed
+    private javax.swing.JButton btnCustomerLogin;
     private javax.swing.JButton btnSalespersonLogin;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCustomersLogin;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnPOLK;
-    private javax.swing.JButton btnSalesPesronLogin;
+    private javax.swing.JButton btnTechnicalIssue;
     private javax.swing.JButton btnverifybilling1;
     private javax.swing.JLabel jLabel;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblPassword;

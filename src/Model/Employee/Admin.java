@@ -7,7 +7,7 @@ package Model.Employee;
 
 /**
  *
- * @author abhishek prakash
+ * @author kishorebalaji
  */
 public class Admin extends Employee {
     public Admin(String firstName, String lastName, String email, String ssn) {
