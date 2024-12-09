@@ -29,17 +29,21 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="lblCustomerName" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="lblCustomerEmail" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                                  <EmptySpace min="141" pref="141" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="lblCustomerName" min="-2" pref="96" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="lblCustomerEmail" min="-2" pref="96" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtCustomerName" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtCustomerEmail" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                                      <Component id="txtCustomerName" pref="203" max="32767" attributes="0"/>
+                                      <Component id="txtCustomerEmail" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="333" max="-2" attributes="0"/>

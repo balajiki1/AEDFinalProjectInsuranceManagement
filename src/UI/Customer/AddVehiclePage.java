@@ -66,7 +66,6 @@ public class AddVehiclePage extends javax.swing.JPanel {
         ComboBoxMake = new javax.swing.JComboBox<>();
         lblModel = new javax.swing.JLabel();
         ComboBoxModel = new javax.swing.JComboBox<>();
-        btnRemoveVeh = new javax.swing.JButton();
         btnNextSelectPackage = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
@@ -113,15 +112,6 @@ public class AddVehiclePage extends javax.swing.JPanel {
 
         ComboBoxModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "select", "Toyota Camry", "Toyota Corolla", "Toyota Prius", "Ford Expedition", "Ford Bronco", "Ford Ranger", "Nissan NV200", "Nissan NV Cargo and NV Passenger", "Rolls-Royce Phantom", "Rolls-Royce Ghost", "Rolls-Royce Wraith" }));
 
-        btnRemoveVeh.setBackground(new java.awt.Color(204, 204, 204));
-        btnRemoveVeh.setText("Remove Vehicles");
-        btnRemoveVeh.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnRemoveVeh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoveVehActionPerformed(evt);
-            }
-        });
-
         btnNextSelectPackage.setBackground(new java.awt.Color(204, 204, 204));
         btnNextSelectPackage.setText("Next: Select Package");
         btnNextSelectPackage.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -140,9 +130,7 @@ public class AddVehiclePage extends javax.swing.JPanel {
                 .addComponent(btnBack)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 443, Short.MAX_VALUE)
-                .addComponent(btnRemoveVeh)
-                .addGap(117, 117, 117))
+                .addGap(117, 691, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -189,14 +177,9 @@ public class AddVehiclePage extends javax.swing.JPanel {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(142, 142, 142)
-                                .addComponent(btnRemoveVeh))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(132, 132, 132)
-                                .addComponent(btnBack)))
-                        .addGap(40, 40, 40)))
+                        .addGap(132, 132, 132)
+                        .addComponent(btnBack)
+                        .addGap(50, 50, 50)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFName1)
                     .addComponent(lblCity))
@@ -227,7 +210,7 @@ public class AddVehiclePage extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 801, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1264, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,10 +230,6 @@ public class AddVehiclePage extends javax.swing.JPanel {
     private void ComboBoxYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxYearActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboBoxYearActionPerformed
-
-    private void btnRemoveVehActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveVehActionPerformed
-
-    }//GEN-LAST:event_btnRemoveVehActionPerformed
 
     private void btnNextSelectPackageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextSelectPackageActionPerformed
          // Get VIN from input
@@ -316,7 +295,6 @@ public class AddVehiclePage extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> ComboBoxYear;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnNextSelectPackage;
-    private javax.swing.JButton btnRemoveVeh;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

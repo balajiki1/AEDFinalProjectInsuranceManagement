@@ -77,7 +77,7 @@ public class PaymentDetails extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(153, 204, 255));
 
-        btnBack.setText("Back");
+        btnBack.setText("Logout");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
