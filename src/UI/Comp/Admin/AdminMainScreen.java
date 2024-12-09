@@ -530,7 +530,7 @@ private void sendEmail(String recipientEmail, String recipientName) {
         message.setFrom(new InternetAddress(senderEmail));
         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
         message.setSubject("Welcome to Insurance Portal");
-        message.setText("Dear " + recipientName + ",\n\nYour account has been successfully created.\n\nRegards,\nAdmin Team");
+        message.setText("Dear " + recipientName + ",\n\nYour account has been successfully created.Please Contact your admin for the credential\n\nRegards,\nAdmin Team");
 
         Transport.send(message);
         JOptionPane.showMessageDialog(this, "Email sent to " + recipientEmail);
