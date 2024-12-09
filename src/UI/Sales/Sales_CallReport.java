@@ -165,6 +165,7 @@ public class Sales_CallReport extends javax.swing.JPanel {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
+        workPanel.remove(this);
         CardLayout layout = (CardLayout) workPanel.getLayout();
         layout.previous(workPanel);
 
