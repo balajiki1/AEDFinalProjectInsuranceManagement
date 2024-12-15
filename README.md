@@ -139,8 +139,4 @@ resources/
 
 ---
 
-## **Contributors**
 
-- **Kishore Balaji** (002333011)
-- **Abhinav Chinta** (002331273)
-- **Pranit Mathyam** (002059550)
